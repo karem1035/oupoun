@@ -7,7 +7,7 @@ const Footer = () => {
         <Link href="/contact">Terms of Use</Link>
         <Link href="/privacy">Privacy Policy</Link>
       </div>
-      <p className="text-sm">Copyright © {new Date().getFullYear()} Outpoun.</p>
+      <p className="text-sm">Copyright © {new Date().getFullYear()} Oupoun.</p>
     </footer>
   );
 };

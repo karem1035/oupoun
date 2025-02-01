@@ -1,7 +1,6 @@
 const translations = {
   en: {
     navbar: {
-      about: 'About',
       download: 'Download',
     },
     downloadButtons: {
@@ -29,6 +28,7 @@ const translations = {
     },
     footer: {
       terms: 'Terms of Use',
+      about: 'About Us',
       privacy: 'Privacy Policy',
     },
     about: {
@@ -44,7 +44,6 @@ const translations = {
 
   ar: {
     navbar: {
-      about: 'معلومات عنا',
       download: 'التحميل',
     },
     downloadButtons: {
@@ -72,6 +71,7 @@ const translations = {
     },
     footer: {
       terms: 'شروط الاستخدام',
+      about: 'معلومات عنا',
       privacy: 'سياسة الخصوصية',
     },
     about: {

@@ -1,10 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { X, Menu } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
 import DownloadModal from './DownloadModal';
-
 import { useLanguage } from '../contexts/LanguageContext';
 import translations from '../locales/translations';
 
@@ -16,6 +15,23 @@ const Navbar = () => {
 
   const toggleModal = () => setIsModalOpen(!isModalOpen);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  // Close modal when Escape key is pressed
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsModalOpen(false);
+      }
+    };
+
+    if (isModalOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isModalOpen]);
 
   return (
     <>

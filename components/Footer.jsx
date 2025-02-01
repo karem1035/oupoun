@@ -15,6 +15,7 @@ const Footer = () => {
       >
         <Link href="/terms-of-use">{t.terms}</Link>
         <Link href="/privacy-policy">{t.privacy}</Link>
+        <Link href="/about-us">{t.about}</Link>
       </div>
       <p className="text-sm">Copyright © {new Date().getFullYear()} Oupoun.</p>
     </footer>

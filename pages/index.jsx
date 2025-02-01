@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -63,6 +63,58 @@ export default function Home() {
               </div>
             </div>
           </button>
+        </div>
+      </div>
+
+      {/* Features */}
+      <div className="flex flex-col items-center mt-10 ">
+        <h1 className="md:text-5xl text-3xl md:my-5 mt-5 md:w-[80%] leading-10 text-center font-bold">
+          Your Savings Are Just a Click Away with Oupoun
+        </h1>
+        {/* Feature cards */}
+        <div className="grid md:grid-cols-3 py-10 gap-14 lg:gap-0">
+          {/* Card 1 */}
+          <div className="flex flex-col items-center ">
+            <Image
+              src="/images/1-download.png"
+              alt="Feature 1"
+              className="mb-5"
+              width={300}
+              height={300}
+            />
+            <p className="text-2xl font-bold mb-2">Explore Local Deals</p>
+            <p className="text-center font-semibold md:w-[80%]">
+              Find the best offers near you. Save on dining, wellness, and more.
+            </p>
+          </div>
+          {/* Card 2 */}
+          <div className="flex flex-col items-center">
+            <Image
+              src="/images/2-createAccount.png"
+              alt="Feature 2"
+              className="mb-5"
+              width={300}
+              height={300}
+            />
+            <p className="text-2xl font-bold mb-2">Easy to Use.</p>
+            <p className="text-center   font-semibold md:w-[80%]">
+              Browse, select, and redeem offers in just a few taps.
+            </p>
+          </div>
+          {/* Card 3 */}
+          <div className="flex flex-col items-center">
+            <Image
+              src="/images/3-enjoy.png"
+              alt="Feature 3"
+              className="mb-5"
+              width={300}
+              height={300}
+            />
+            <p className="text-2xl font-bold mb-2">Save Big, Live Better</p>
+            <p className="text-center  font-semibold md:w-[80%]">
+              Enjoy exclusive savings on services you love.
+            </p>
+          </div>
         </div>
       </div>
     </div>

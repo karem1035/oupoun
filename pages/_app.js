@@ -1,11 +1,14 @@
-import Layout from '../components/Layout';
-import '../styles/global.css';
+import Layout from '@/components/Layout';
+import { LanguageProvider } from '@/contexts/LanguageContext';
+import '@/styles/global.css';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <LanguageProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </LanguageProvider>
   );
 }
 

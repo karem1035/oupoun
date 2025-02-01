@@ -2,11 +2,17 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { X, Menu } from 'lucide-react';
+import LanguageSwitcher from './LanguageSwitcher';
 import DownloadModal from './DownloadModal';
+
+import { useLanguage } from '../contexts/LanguageContext';
+import translations from '../locales/translations';
 
 const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { lang } = useLanguage();
+  const t = translations[lang].navbar;
 
   const toggleModal = () => setIsModalOpen(!isModalOpen);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -23,14 +29,15 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-10">
             <Link href="/about-us" className="font-semibold text-gray-800">
-              About
+              {t.about}
             </Link>
             <button
               className="bg-sky-950 py-3 px-5 rounded-lg text-xs font-bold text-white"
               onClick={toggleModal}
             >
-              Download
+              {t.download}
             </button>
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Icon */}
@@ -47,7 +54,7 @@ const Navbar = () => {
               className="text-gray-800 text-lg"
               onClick={toggleMenu}
             >
-              About
+              {t.about}
             </Link>
             <button
               className="bg-sky-950 py-3 px-5 rounded-lg text-sm font-bold text-white w-full"
@@ -56,8 +63,9 @@ const Navbar = () => {
                 toggleMenu();
               }}
             >
-              Download
+              {t.download}
             </button>
+            <LanguageSwitcher />
           </div>
         )}
       </nav>

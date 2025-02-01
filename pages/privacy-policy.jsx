@@ -1,7 +1,7 @@
 export default function PrivacyPolicy() {
   return (
     <div className="flex flex-col items-center justify-center p-6">
-      <div className="text-start leading-loose text-lg font-medium lg:w-[50%]">
+      <div className="text-start leading-loose text-lg font-medium lg:w-[70%]">
         <h1 className="md:text-3xl text-2xl md:my-5 mt-5 font-bold">
           Oupoun Privacy & Policy
         </h1>

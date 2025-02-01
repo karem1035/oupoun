@@ -1,7 +1,7 @@
 export default function TermsOfUse() {
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="text-start leading-loose text-lg font-medium lg:w-[50%] mt-5 md:mt-8">
+      <div className="text-start leading-loose text-lg font-medium lg:w-[70%] mt-5 md:mt-8">
         <h2 className="text-2xl font-bold mb-4">TERMS AND CONDITIONS</h2>
         <p className="mb-4">
           <strong>Last updated:</strong> December 16, 2024

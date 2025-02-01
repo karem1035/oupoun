@@ -72,7 +72,7 @@ export default function Home() {
           Your Savings Are Just a Click Away with Oupoun
         </h1>
         {/* Feature cards */}
-        <div className="grid md:grid-cols-3 py-10 gap-14 lg:gap-0">
+        <div className="grid md:grid-cols-3 lg:w-[80%] py-10 gap-14 lg:gap-0">
           {/* Card 1 */}
           <div className="flex flex-col items-center ">
             <Image

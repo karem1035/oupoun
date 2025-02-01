@@ -14,9 +14,9 @@ export default function TermsOfUse() {
   }, [lang]);
 
   return (
-    <div className="flex flex-col items-center justify-center px-6 py-8">
+    <div className="flex flex-col items-center justify-center py-8">
       <div
-        className="prose prose-lg lg:prose-xl text-gray-800 lg:w-[70%] mt-5 md:mt-8"
+        className="prose prose-lg lg:prose-xl text-gray-800 lg:w-[70%] mt-5 md:mt-8 p-0 prose-h1:text-2xl prose-h2:text-xl"
         dir={lang === 'ar' ? 'rtl' : 'ltr'}
       >
         <ReactMarkdown>{content}</ReactMarkdown>

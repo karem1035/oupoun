@@ -8,6 +8,12 @@ const AppStoreButton = () => {
     <button
       type="button"
       class="flex items-center justify-center mt-3 text-white bg-black w-44 h-14 rounded-lg"
+      onClick={() => {
+        window.open(
+          'https://apps.apple.com/us/app/oupoun-%D8%A7%D9%88%D8%A8%D9%88%D9%86/id6739812562',
+          '_blank'
+        );
+      }}
     >
       <div class="mr-3">
         <svg viewBox="0 0 384 512" width="30">

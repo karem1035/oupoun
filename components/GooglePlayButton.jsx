@@ -8,6 +8,12 @@ const GooglePlayButton = () => {
     <button
       type="button"
       class="flex items-center justify-center w-48 mt-3 text-white bg-black rounded-lg h-14"
+      onClick={() => {
+        window.open(
+          'https://play.google.com/store/apps/details?id=com.opaltech.oupounclient',
+          '_blank'
+        );
+      }}
     >
       <div class="mr-3">
         <svg viewBox="30 336.7 120.9 129.2" width="30">

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { X, Menu } from 'lucide-react';
@@ -13,6 +13,9 @@ const Navbar = () => {
   const { lang } = useLanguage();
   const t = translations[lang].navbar;
 
+  const menuRef = useRef(null);
+  const modalRef = useRef(null);
+
   const toggleModal = () => setIsModalOpen(!isModalOpen);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -21,17 +24,38 @@ const Navbar = () => {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') {
         setIsModalOpen(false);
+        setIsMenuOpen(false);
       }
     };
 
-    if (isModalOpen) {
+    if (isModalOpen || isMenuOpen) {
       window.addEventListener('keydown', handleKeyDown);
     }
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isModalOpen]);
+  }, [isModalOpen, isMenuOpen]);
+
+  // Close modal or menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setIsModalOpen(false);
+      }
+    };
+
+    if (isModalOpen || isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isModalOpen, isMenuOpen]);
 
   return (
     <>
@@ -64,7 +88,10 @@ const Navbar = () => {
 
         {/* Mobile Menu Dropdown */}
         {isMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-center p-5 space-y-4 md:hidden">
+          <div
+            ref={menuRef}
+            className="absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-center p-5 space-y-4 md:hidden"
+          >
             <Link
               href="/about-us"
               className="text-gray-800 text-lg"
@@ -87,7 +114,13 @@ const Navbar = () => {
       </nav>
 
       {/* Download Modal */}
-      {isModalOpen && <DownloadModal onClose={toggleModal} />}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+          <div ref={modalRef}>
+            <DownloadModal onClose={toggleModal} />
+          </div>
+        </div>
+      )}
     </>
   );
 };

@@ -31,7 +31,17 @@ const translations = {
       terms: 'Terms of Use',
       privacy: 'Privacy Policy',
     },
+    about: {
+      title: 'About Oupoun',
+      paragraph1:
+        'Oupoun, owned by <strong>Opal World Company</strong> based in Riyadh, Saudi Arabia, is a trusted digital marketplace where consumers can discover and purchase services and experiences that enrich their lives and provide exceptional value.',
+      paragraph2:
+        'At the core of Oupoun are strong partnerships with outstanding local businesses. These collaborations enable us to offer the best experiences and deals to our customers, whether they seek new activities, dining options, or personal care services.',
+      paragraph3:
+        'By connecting consumers with our merchant partners, we foster lasting relationships between loyal customers and quality local enterprises, contributing to the vitality of our communities.',
+    },
   },
+
   ar: {
     navbar: {
       about: 'معلومات عنا',
@@ -63,6 +73,15 @@ const translations = {
     footer: {
       terms: 'شروط الاستخدام',
       privacy: 'سياسة الخصوصية',
+    },
+    about: {
+      title: 'عن أوبون',
+      paragraph1:
+        'أوبون، المملوكه لشركة أوبال العالم ومقرها الرياض، المملكة العربية السعودية، هو تطبيق رقمي موثوق حيث يمكن للمستهلكين اكتشاف وشراء الخدمات والتجارب التي تُثري حياتهم وتوفر قيمة استثنائية.',
+      paragraph2:
+        'تتجلى قوة أوبون في شراكاتنا القوية مع شركات ومقدمي خدمات محليين تمكننا من تقديم أفضل التجارب والعروض لعملائنا، سواء كانوا يبحثون عن أنشطة جديدة أو خيارات للطعام أو خدمات العناية الشخصية. من خلال ربط المستهلكين بشركائنا التجاريين،',
+      paragraph3:
+        'نعزز علاقات دائمة بين العملاء المخلصين والشركات المحلية ذات الجودة، مما يساهم في ازدهار مجتمعاتنا.',
     },
   },
 };

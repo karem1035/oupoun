@@ -21,7 +21,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-10">
             <Link href="/about-us" className="font-semibold text-gray-800">
               About
             </Link>

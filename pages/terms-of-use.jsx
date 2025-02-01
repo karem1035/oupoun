@@ -1,250 +1,123 @@
+import translations from '@/locales/tou_translation';
+import { useLanguage } from '../contexts/LanguageContext';
+
 export default function TermsOfUse() {
+  const { lang } = useLanguage();
+  const t = translations[lang];
+
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div
+      className="flex flex-col items-center justify-center"
+      dir={lang === 'ar' ? 'rtl' : 'ltr'}
+    >
       <div className="text-start leading-loose text-lg font-medium lg:w-[70%] mt-5 md:mt-8">
-        <h2 className="text-2xl font-bold mb-4">TERMS AND CONDITIONS</h2>
-        <p className="mb-4">
-          <strong>Last updated:</strong> December 16, 2024
-        </p>
-
-        <h3 className="text-xl font-bold mt-6 mb-4">
-          AGREEMENT TO OUR LEGAL TERMS
-        </h3>
-        <p className="mb-4">
-          We are <strong>Opal World For Trading Company</strong> ("
-          <strong>Company</strong>," "<strong>we</strong>," "<strong>us</strong>
-          ," "<strong>our</strong>"), a company registered in{' '}
-          <strong>Saudi Arabia</strong> at <strong>Riyadh Saudi Arabia</strong>,
-          Riyadh, 12385. We operate the mobile application{' '}
-          <strong>Oupoun</strong> (the "<strong>App</strong>"), as well as any
-          other related products and services that refer or link to these legal
-          terms (the "<strong>Legal Terms</strong>") (collectively, the "
-          <strong>Services</strong>").
-        </p>
-        <p className="mb-4">
-          <strong>Oupoun</strong> is an innovative e-commerce platform
-          connecting customers with local businesses and service providers in
-          Saudi Arabia. It offers diverse activities, goods, and services while
-          providing a safe and easy shopping experience, improving customer
-          satisfaction and helping businesses drive more sales, ultimately
-          boosting growth in the region's digital marketplace.
-        </p>
-
-        <h3 className="text-xl font-bold mt-6 mb-4">CONTACT INFORMATION</h3>
-        <p className="mb-4">You can contact us by:</p>
-        <ul className="list-disc pl-8 mb-4">
+        <h2
+          className="text-2xl font-bold mb-4"
+          dangerouslySetInnerHTML={{ __html: t.header.title }}
+        />
+        <p
+          className="mb-4"
+          dangerouslySetInnerHTML={{ __html: t.header.lastUpdated }}
+        />
+        <h3
+          className="text-xl font-bold mt-6 mb-4"
+          dangerouslySetInnerHTML={{ __html: t.header.agreement }}
+        />
+        <p
+          className="mb-4"
+          dangerouslySetInnerHTML={{ __html: t.intro.companyDescription }}
+        />
+        <p
+          className="mb-4"
+          dangerouslySetInnerHTML={{ __html: t.intro.platformDescription }}
+        />
+        <h3
+          className="text-xl font-bold mt-6 mb-4"
+          dangerouslySetInnerHTML={{ __html: t.contact.title }}
+        />
+        <p
+          className="mb-4"
+          dangerouslySetInnerHTML={{ __html: t.contact.description }}
+        />
+        <ul className="mb-4">
           <li>
-            <strong>Email:</strong>{' '}
-            <a href="mailto:info@opalworld.com.sa" className="text-blue-600">
-              info@opalworld.com.sa
-            </a>
+            <strong
+              dangerouslySetInnerHTML={{ __html: t.contact.emailLabel }}
+            />{' '}
+            <a href={`mailto:${t.contact.email}`}>{t.contact.email}</a>
           </li>
           <li>
-            <strong>Mail:</strong> Salah Ad Din Al Ayyubi Rd, Al Malaz, Riyadh
-            12836
+            <strong dangerouslySetInnerHTML={{ __html: t.contact.mailLabel }} />{' '}
+            {t.contact.mailAddress}
           </li>
         </ul>
-
-        <h3 className="text-xl font-bold mt-6 mb-4">AGREEMENT</h3>
-        <p className="mb-4">
-          These Legal Terms constitute a legally binding agreement made between
-          you, whether personally or on behalf of an entity (
-          <strong>"you"</strong>), and{' '}
-          <strong>Opal World For Trading Company</strong>, concerning your
-          access to and use of the Services. By accessing the Services, you
-          confirm that you have read, understood, and agreed to be bound by all
-          of these Legal Terms.
-        </p>
-        <p className="mb-4">
-          <strong>
-            If you do not agree with all of these Legal Terms, you are expressly
-            prohibited from using the Services, and you must discontinue use
-            immediately.
-          </strong>
-        </p>
-        <p className="mb-4">
-          Notifications may be provided in-app as part of the Services.
-        </p>
-        <p className="mb-4">
-          The Services are intended for users who are at least 13 years of age.
-          All users who are minors in the jurisdiction in which they reside
-          (generally under the age of 18) must have the permission of, and be
-          directly supervised by, their parent or guardian to use the Services.
-          If you are a minor, you must have your parent or guardian read and
-          agree to these Legal Terms prior to you using the Services.
-        </p>
-        <p className="mb-4">
-          We recommend that you print a copy of these Legal Terms for your
-          records.
-        </p>
-
-        <h3 className="text-xl font-bold mt-6 mb-4">TABLE OF CONTENTS</h3>
+        <h3
+          className="text-xl font-bold mt-6 mb-4"
+          dangerouslySetInnerHTML={{ __html: t.agreement.title }}
+        />
+        <p
+          className="mb-4"
+          dangerouslySetInnerHTML={{ __html: t.agreement.description }}
+        />
+        <p
+          className="mb-4"
+          dangerouslySetInnerHTML={{ __html: t.agreement.disclaimer }}
+        />
+        <p
+          className="mb-4"
+          dangerouslySetInnerHTML={{ __html: t.agreement.notifications }}
+        />
+        <p
+          className="mb-4"
+          dangerouslySetInnerHTML={{ __html: t.agreement.ageRestriction }}
+        />
+        <p
+          className="mb-4"
+          dangerouslySetInnerHTML={{ __html: t.agreement.minorRequirement }}
+        />
+        <p
+          className="mb-4"
+          dangerouslySetInnerHTML={{ __html: t.agreement.recommendation }}
+        />
+        <h3 className="text-xl font-bold mt-6 mb-4">
+          {t.tableOfContents.title}
+        </h3>
         <ol className="list-decimal pl-8 mb-4">
-          <li>
-            <a href="#1" className="text-blue-600">
-              OUR SERVICES
-            </a>
-          </li>
-          <li>
-            <a href="#2" className="text-blue-600">
-              INTELLECTUAL PROPERTY RIGHTS
-            </a>
-          </li>
-          <li>
-            <a href="#3" className="text-blue-600">
-              USER REPRESENTATIONS
-            </a>
-          </li>
-          <li>
-            <a href="#4" className="text-blue-600">
-              PRODUCTS
-            </a>
-          </li>
-          <li>
-            <a href="#5" className="text-blue-600">
-              PURCHASES AND PAYMENT
-            </a>
-          </li>
-          <li>
-            <a href="#6" className="text-blue-600">
-              RETURN/REFUNDS POLICY
-            </a>
-          </li>
-          <li>
-            <a href="#7" className="text-blue-600">
-              PROHIBITED ACTIVITIES
-            </a>
-          </li>
-          <li>
-            <a href="#8" className="text-blue-600">
-              USER GENERATED CONTRIBUTIONS
-            </a>
-          </li>
-          <li>
-            <a href="#9" className="text-blue-600">
-              CONTRIBUTION LICENSE
-            </a>
-          </li>
-          <li>
-            <a href="#10" className="text-blue-600">
-              MOBILE APPLICATION LICENSE
-            </a>
-          </li>
-          <li>
-            <a href="#11" className="text-blue-600">
-              SERVICES MANAGEMENT
-            </a>
-          </li>
-          <li>
-            <a href="#12" className="text-blue-600">
-              PRIVACY POLICY
-            </a>
-          </li>
-          <li>
-            <a href="#13" className="text-blue-600">
-              TERM AND TERMINATION
-            </a>
-          </li>
-          <li>
-            <a href="#14" className="text-blue-600">
-              MODIFICATIONS AND INTERRUPTIONS
-            </a>
-          </li>
-          <li>
-            <a href="#15" className="text-blue-600">
-              GOVERNING LAW
-            </a>
-          </li>
-          <li>
-            <a href="#16" className="text-blue-600">
-              DISPUTE RESOLUTION
-            </a>
-          </li>
-          <li>
-            <a href="#17" className="text-blue-600">
-              CORRECTIONS
-            </a>
-          </li>
-          <li>
-            <a href="#18" className="text-blue-600">
-              DISCLAIMER
-            </a>
-          </li>
-          <li>
-            <a href="#19" className="text-blue-600">
-              LIMITATIONS OF LIABILITY
-            </a>
-          </li>
-          <li>
-            <a href="#20" className="text-blue-600">
-              INDEMNIFICATION
-            </a>
-          </li>
-          <li>
-            <a href="#21" className="text-blue-600">
-              USER DATA
-            </a>
-          </li>
-          <li>
-            <a href="#22" className="text-blue-600">
-              ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES
-            </a>
-          </li>
-          <li>
-            <a href="#23" className="text-blue-600">
-              MISCELLANEOUS
-            </a>
-          </li>
-          <li>
-            <a href="#24" className="text-blue-600">
-              CONTACT US
-            </a>
-          </li>
+          {t.tableOfContents.items.map((item) => (
+            <li key={item.id}>
+              <a href={`#${item.id}`} className="text-blue-600">
+                {item.text}
+              </a>
+            </li>
+          ))}
         </ol>
 
-        {/* Add the rest of the sections here following the same structure */}
+        {/* //////////////////////////////// Here /////////////////////////////// */}
 
         {/* Section 1: OUR SERVICES */}
-        <h2 id="1" className="text-2xl font-bold mt-8 mb-4">
-          1. OUR SERVICES
-        </h2>
-        <p className="mb-4">
-          The information provided when using the Services is not intended for
-          distribution to or use by any person or entity in any jurisdiction or
-          country where such distribution or use would be contrary to law or
-          regulation or which would subject us to any registration requirement
-          within such jurisdiction or country. Accordingly, those persons who
-          choose to access the Services from other locations do so on their own
-          initiative and are solely responsible for compliance with local laws,
-          if and to the extent local laws are applicable.
-        </p>
+        <h2
+          id="1"
+          className="text-2xl font-bold mt-8 mb-4"
+          dangerouslySetInnerHTML={{ __html: t.section1.title }}
+        />
+
+        <p
+          className="mb-4"
+          dangerouslySetInnerHTML={{ __html: t.section1.description }}
+        />
 
         {/* Section 2: INTELLECTUAL PROPERTY RIGHTS */}
-        <h2 id="2" className="text-2xl font-bold mt-8 mb-4">
-          2. INTELLECTUAL PROPERTY RIGHTS
-        </h2>
-        <p className="mb-4">
-          We are the owner or the licensee of all intellectual property rights
-          in our Services, including all source code, databases, functionality,
-          software, website designs, audio, video, text, photographs, and
-          graphics in the Services (collectively, the <strong>"Content"</strong>
-          ), as well as the trademarks, service marks, and logos contained
-          therein (the <strong>"Marks"</strong>).
-        </p>
-        <p className="mb-4">
-          Our Content and Marks are protected by copyright and trademark laws
-          (and various other intellectual property rights and unfair competition
-          laws) and treaties around the world.
-        </p>
-        <p className="mb-4">
-          The Content and Marks are provided in or through the Services{' '}
-          <strong>"AS IS"</strong> for your personal, non-commercial use or
-          internal business purpose only.
-        </p>
-
+        <h2
+          id="2"
+          className="text-2xl font-bold mt-8 mb-4"
+          dangerouslySetInnerHTML={{ __html: t.section2.title }}
+        />
+        {t.section2.description.map((item) => (
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: item }} />
+        ))}
         {/* Subsection: Your Use of Our Services */}
         <h3 className="text-xl font-bold mt-6 mb-4">
-          Your Use of Our Services
+          {t.section2.useOfServices.title}
         </h3>
         <p className="mb-4">
           Subject to your compliance with these Legal Terms, including the{' '}
@@ -298,7 +171,6 @@ export default function TermsOfUse() {
           material breach of our Legal Terms, and your right to use our Services
           will terminate immediately.
         </p>
-
         {/* Subsection: Your Submissions */}
         <h3 className="text-xl font-bold mt-6 mb-4">Your Submissions</h3>
         <p className="mb-4">
@@ -364,7 +236,6 @@ export default function TermsOfUse() {
           section, any third-party intellectual property rights, or applicable
           law.
         </p>
-
         {/* Section 3: USER REPRESENTATIONS */}
         <h2 id="3" className="text-2xl font-bold mt-8 mb-4">
           3. USER REPRESENTATIONS
@@ -400,7 +271,6 @@ export default function TermsOfUse() {
           information, we reserve the right to suspend or terminate your account
           and refuse any and all current or future use of the Services.
         </p>
-
         {/* Section 4: PRODUCTS */}
         <h2 id="4" className="text-2xl font-bold mt-8 mb-4">
           4. PRODUCTS
@@ -424,7 +294,6 @@ export default function TermsOfUse() {
           </li>
           <li>Prices for all products are subject to change.</li>
         </ol>
-
         {/* Section 5: PURCHASES AND PAYMENT */}
         <h2 id="5" className="text-2xl font-bold mt-8 mb-4">
           5. PURCHASES AND PAYMENT
@@ -476,7 +345,6 @@ export default function TermsOfUse() {
             resellers, or distributors.
           </li>
         </ol>
-
         {/* Section 6: Return/Refunds Policy */}
         <h2 id="6" className="text-2xl font-bold mt-8 mb-4">
           6. Return/Refunds Policy
@@ -487,7 +355,6 @@ export default function TermsOfUse() {
           return, refund, or exchange of purchases (<strong>"Purchases"</strong>
           ) made through our mobile application.
         </p>
-
         <h3 className="text-xl font-bold mt-6 mb-4">
           General Conditions for Returns and Refunds
         </h3>
@@ -505,7 +372,6 @@ export default function TermsOfUse() {
             exchange request.
           </li>
         </ol>
-
         <h3 className="text-xl font-bold mt-6 mb-4">
           Non-Refundable and Non-Returnable Conditions
         </h3>
@@ -521,7 +387,6 @@ export default function TermsOfUse() {
             have been used or redeemed in any form.
           </li>
         </ol>
-
         <h3 className="text-xl font-bold mt-6 mb-4">
           Valid Reasons for Return or Exchange
         </h3>
@@ -544,7 +409,6 @@ export default function TermsOfUse() {
             refuses to honor a valid Purchase without valid justification.
           </li>
         </ol>
-
         <h3 className="text-xl font-bold mt-6 mb-4">
           How to Request a Return or Exchange
         </h3>
@@ -566,7 +430,6 @@ export default function TermsOfUse() {
           or exchange is approved, the applicable refund or replacement will be
           processed according to our policies.
         </p>
-
         {/* Section 7: Prohibited Activities */}
         <h2 id="7" className="text-2xl font-bold mt-8 mb-4">
           7. Prohibited Activities
@@ -669,7 +532,6 @@ export default function TermsOfUse() {
             revenue-generating
           </li>
         </ol>
-
         {/* Section 8: User Generated Contributions */}
         <h2 id="8" className="text-2xl font-bold mt-8 mb-4">
           8. User Generated Contributions
@@ -796,7 +658,6 @@ export default function TermsOfUse() {
         <h2 id="10" className="text-2xl font-bold mt-8 mb-4">
           10. Mobile Application License
         </h2>
-
         <h3 className="text-xl font-bold mt-6 mb-4">Use License</h3>
         <p className="mb-4">
           If you access the Services via the App, then we grant you a revocable,
@@ -851,7 +712,6 @@ export default function TermsOfUse() {
             devices for use with the App.
           </li>
         </ol>
-
         <h3 className="text-xl font-bold mt-6 mb-4">
           Apple and Android Devices
         </h3>
@@ -1001,7 +861,6 @@ export default function TermsOfUse() {
           appropriate legal action, including without limitation pursuing civil,
           criminal, and injunctive redress.
         </p>
-
         {/* Section 14: Modifications and Interruptions */}
         <h2 id="14" className="text-2xl font-bold mt-8 mb-4">
           14. Modifications and Interruptions
@@ -1045,7 +904,6 @@ export default function TermsOfUse() {
         <h2 id="16" className="text-2xl font-bold mt-8 mb-4">
           16. Dispute Resolution
         </h2>
-
         <h3 className="text-xl font-bold mt-6 mb-4">Informal Negotiations</h3>
         <p className="mb-4">
           To expedite resolution and control the cost of any dispute,
@@ -1058,7 +916,6 @@ export default function TermsOfUse() {
           informal negotiations commence upon written notice from one Party to
           the other Party.
         </p>
-
         <h3 className="text-xl font-bold mt-6 mb-4">Binding Arbitration</h3>
         <p className="mb-4">
           Any dispute arising out of or in connection with these Legal Terms,
@@ -1074,7 +931,6 @@ export default function TermsOfUse() {
           be <strong>Arabic</strong>. The governing law of these Legal Terms
           shall be substantive law of <strong>Saudi Arabia</strong>.
         </p>
-
         <h3 className="text-xl font-bold mt-6 mb-4">Restrictions</h3>
         <p className="mb-4">
           The Parties agree that any arbitration shall be limited to the Dispute
@@ -1092,7 +948,6 @@ export default function TermsOfUse() {
             any other persons.
           </li>
         </ol>
-
         <h3 className="text-xl font-bold mt-6 mb-4">
           Exceptions to Informal Negotiations and Arbitration
         </h3>
@@ -1244,76 +1099,44 @@ export default function TermsOfUse() {
           is subject to this indemnification upon becoming aware of it.
         </p>
         {/* Section 21: User Data */}
-        <h2 id="21" className="text-2xl font-bold mt-8 mb-4">
-          21. User Data
-        </h2>
-        <p className="mb-4">
-          We will maintain certain data that you transmit to the Services for
-          the purpose of managing the performance of the Services, as well as
-          data relating to your use of the Services. Although we perform regular
-          routine backups of data, you are solely responsible for all data that
-          you transmit or that relates to any activity you have undertaken using
-          the Services. You agree that we shall have no liability to you for any
-          loss or corruption of any such data, and you hereby waive any right of
-          action against us arising from any such loss or corruption of such
-          data.
-        </p>
+        <h2
+          id="21"
+          className="text-2xl font-bold mt-8 mb-4"
+          dangerouslySetInnerHTML={{ __html: t.section21.title }}
+        />
+        {t.section21.description.map((item, index) => (
+          <p
+            key={index}
+            className="mb-4"
+            dangerouslySetInnerHTML={{ __html: item }}
+          />
+        ))}
         {/* Section 22: Electronic Communications, Transactions, and Signatures */}
-        <h2 id="22" className="text-2xl font-bold mt-8 mb-4">
-          22. Electronic Communications, Transactions, and Signatures
-        </h2>
-        <p className="mb-4">
-          Visiting the Services, sending us emails, and completing online forms
-          constitute electronic communications. You consent to receive
-          electronic communications, and you agree that all agreements, notices,
-          disclosures, and other communications we provide to you
-          electronically, via email and on the Services, satisfy any legal
-          requirement that such communication be in writing.
-        </p>
-        <p className="mb-4">
-          <strong>
-            YOU HEREBY AGREE TO THE USE OF ELECTRONIC SIGNATURES, CONTRACTS,
-            ORDERS, AND OTHER RECORDS, AND TO ELECTRONIC DELIVERY OF NOTICES,
-            POLICIES, AND RECORDS OF TRANSACTIONS INITIATED OR COMPLETED BY US
-            OR VIA THE SERVICES.
-          </strong>{' '}
-          You hereby waive any rights or requirements under any statutes,
-          regulations, rules, ordinances, or other laws in any jurisdiction
-          which require an original signature or delivery or retention of
-          non-electronic records, or to payments or the granting of credits by
-          any means other than electronic means.
-        </p>
+        <h2
+          id="22"
+          className="text-2xl font-bold mt-8 mb-4"
+          dangerouslySetInnerHTML={{ __html: t.section22.title }}
+        />
+        {t.section22.description.map((item, index) => (
+          <p
+            key={index}
+            className="mb-4"
+            dangerouslySetInnerHTML={{ __html: item }}
+          />
+        ))}
         {/* Section 23: Miscellaneous */}
-        <h2 id="23" className="text-2xl font-bold mt-8 mb-4">
-          23. Miscellaneous
-        </h2>
-        <p className="mb-4">
-          These Legal Terms and any policies or operating rules posted by us on
-          the Services or in respect to the Services constitute the entire
-          agreement and understanding between you and us. Our failure to
-          exercise or enforce any right or provision of these Legal Terms shall
-          not operate as a waiver of such right or provision. These Legal Terms
-          operate to the fullest extent permissible by law. We may assign any or
-          all of our rights and obligations to others at any time.
-        </p>
-        <p className="mb-4">
-          We shall not be responsible or liable for any loss, damage, delay, or
-          failure to act caused by any cause beyond our reasonable control. If
-          any provision or part of a provision of these Legal Terms is
-          determined to be unlawful, void, or unenforceable, that provision or
-          part of the provision is deemed severable from these Legal Terms and
-          does not affect the validity and enforceability of any remaining
-          provisions.
-        </p>
-        <p className="mb-4">
-          There is no joint venture, partnership, employment or agency
-          relationship created between you and us as a result of these Legal
-          Terms or use of the Services. You agree that these Legal Terms will
-          not be construed against us by virtue of having drafted them. You
-          hereby waive any and all defenses you may have based on the electronic
-          form of these Legal Terms and the lack of signing by the parties
-          hereto to execute these Legal Terms.
-        </p>
+        <h2
+          id="23"
+          className="text-2xl font-bold mt-8 mb-4"
+          dangerouslySetInnerHTML={{ __html: t.section23.title }}
+        />
+        {t.section23.description.map((item, index) => (
+          <p
+            key={index}
+            className="mb-4"
+            dangerouslySetInnerHTML={{ __html: item }}
+          />
+        ))}
         {/* Section 24: Contact Us */}
         <h2 id="24" className="text-2xl font-bold mt-8 mb-4">
           24. Contact Us

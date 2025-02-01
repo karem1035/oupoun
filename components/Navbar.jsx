@@ -48,7 +48,7 @@ const Navbar = () => {
               {t.about}
             </Link>
             <button
-              className="bg-sky-950 py-3 px-5 rounded-lg text-xs font-bold text-white"
+              className="bg-gray-900 py-3 px-5 rounded-lg text-xs font-bold text-white"
               onClick={toggleModal}
             >
               {t.download}
@@ -73,7 +73,7 @@ const Navbar = () => {
               {t.about}
             </Link>
             <button
-              className="bg-sky-950 py-3 px-5 rounded-lg text-sm font-bold text-white w-full"
+              className="bg-gray-900 py-3 px-5 rounded-lg text-sm font-bold text-white w-full"
               onClick={() => {
                 toggleModal();
                 toggleMenu();

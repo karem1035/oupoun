@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
 
   return (
     <div
-      className="flex flex-col items-center justify-center p-6"
+      className="flex flex-col items-center justify-center p-3"
       dir={lang === 'ar' ? 'rtl' : 'ltr'}
     >
       <div className="text-start leading-loose text-lg font-medium lg:w-[70%]">

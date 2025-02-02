@@ -31,7 +31,7 @@ export default function ScrollToTop() {
           onClick={scrollToTop}
           className={`fixed bottom-6  ${
             lang === 'ar' ? 'left-6' : 'right-6'
-          } bg-gray-700 hover:bg-gray-900 text-white p-3 rounded-full shadow-lg transition-all`}
+          } bg-gray-800 hover:bg-gray-900 text-white p-3 rounded-full shadow-lg transition-all`}
         >
           <ArrowUpCircle size={32} />
         </motion.button>
